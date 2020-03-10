@@ -7,10 +7,10 @@ import './Home.css';
 
 /**
  * @class Home
- * @description Home is a Container which get popular tshirts from API called in componentDidMount 
- * and changing state so tshirts will get render.
+ * @description Home is a Container which get all tshirts from products file
+ * and populate state so tshirts will get render.
  * State of this Container is Tshirt List
- * Grid is used to show the tshirt list.
+ * CSS Grid is used to show the tshirt list.
  */
 
 class Home extends Component {
@@ -26,6 +26,7 @@ class Home extends Component {
         };
     }
 
+    // handle the state when props changes
     static getDerivedStateFromProps(props, state) {
         if (props.removedItem.hasOwnProperty('id') && props.removedItem.id !== state.previousProps.id) {
             return {
@@ -38,6 +39,7 @@ class Home extends Component {
         }
     }
 
+    // filtering the list
     applyFilter = filters => {
         const list = this.removeCartItemsFromList(productsData, [ ...this.state.cartList ])
         if (filters.length === 0) {
@@ -52,6 +54,7 @@ class Home extends Component {
         })
     }
 
+    // setting the filter in state on user click 
     setFilter = size => {
         let selectedSizesArr = this.state.selectedSizes;
         const index = selectedSizesArr.indexOf(size);
@@ -65,6 +68,7 @@ class Home extends Component {
         this.setState({ selectedSizes: selectedSizesArr, tshirtsList: result });
     }
 
+    // to handle the cart operation: on removing a tshirt from cart and add it back into the list
     removeCartItemsFromList = (list, cart) => {
         return list.filter(tshirt => {
             for (let i = 0; i < cart.length; i++) {
@@ -77,38 +81,41 @@ class Home extends Component {
         });
     }
 
+    // to handle the cart operation: on add to cart, adding in cart and removing from list
     addToCart = item => {
         this.props.sendToCart(item);
         const cart = this.state.cartList;
         cart.push(item);
         const list = this.removeCartItemsFromList(this.state.tshirtsList, [...cart]);
-        // console.log(list, cart);
         this.setState({ tshirtsList: list, cartList: cart });
     }
 
+    // this function will show the tshirts on the page
     renderTshirts = () => {
         return this.state.tshirtsList.map(tshirt => {
             return <TshirtCell key={tshirt.id} tshirt={tshirt} onSelect={this.goToTshirt} addToCart={this.addToCart}/>
         })
     }
 
+    // function to navigate to Tshirt Details View page
     goToTshirt = details => {
         localStorage.setItem('tshirtData', JSON.stringify(details));
         this.props.history.push(`/tshirt-details`);
     }
 
+    // sort tshirsts on the bases of user's input i.e. either acending or descending on bases of price
     sortList = (list, sortBy) => {
         if (sortBy === 'select') return list;
         return list.sort((a, b) => parseInt(sortBy) ? b.price - a.price : a.price - b.price);
     }
 
+    // to handle selectbox changes for sorting tshirts
     handleOrderChange = event => {
         const result = this.sortList([ ...this.state.tshirtsList ], event.target.value);
         this.setState({ tshirtsList: result, order: event.target.value });
     }
 
     render() {
-        console.log(this.state);
         return (<>
             <div style={{ float: 'right', marginBottom: '10px' }}>
                 <span >Order By: </span>

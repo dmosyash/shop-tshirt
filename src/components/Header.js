@@ -4,7 +4,7 @@ import Cart from './Cart';
 /**
  * @name Header
  * @description as name suggest it is Header of the whole App
- * It has two parts App's Logo and Search box for movies.
+ * It has two parts App's Logo and shopping cart.
  */
 
 const headerStyle = {

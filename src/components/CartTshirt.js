@@ -1,10 +1,9 @@
 import React from 'react';
-// import { imageBaseUrl } from '../services/apiService';
 
 /**
  * @constant CartTshirt
  * @param {Object} tshirt this has all details of Tshirt
- * thumbnail of tshirt is getting from TMDb server of 185px width 
+ * This is to show the details of tshirt in the cart  
  */
 
 const colStyle = {

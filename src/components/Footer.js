@@ -8,10 +8,10 @@ import React from 'react';
 
 const footerStyle = {
     backgroundColor: '#282c34',
-    minHeight: '10vh',
-    fontSize: 'calc(10px + 2vmin)',
+    minHeight: '3vh',
+    fontSize: 'calc(10px + .5vmin)',
     color: 'white',
-    padding: '15px 80px',
+    padding: '1px 80px',
     textAlign: 'center'
 }
 
@@ -29,7 +29,7 @@ const Footer = (props) => (
     <div style={footerStyle}>
             <ul style={ulStyle}>
                 <li style={liStyle}>
-                    <a className="github-button" href="https://github.com/dmosyash/movies-n-chill" data-icon="octicon-star" data-size="large" aria-label="Star dmosyash/movies-n-chill on GitHub">Star</a>
+                    <a className="github-button" href="https://github.com/dmosyash/shop-tshirt" data-icon="octicon-star" data-size="large" aria-label="Star dmosyash/shop-tshirt on GitHub">Star</a>
                 </li>
                 <li style={liStyle}>
                     <a className="github-button" href="https://github.com/dmosyash" data-size="large" aria-label="Follow @dmosyash on GitHub">Follow @dmosyash</a>

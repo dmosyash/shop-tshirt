@@ -4,9 +4,12 @@ import './cart.css';
 
 /**
  * @class Cart
- * @description Cart is a smart component which get popular tshirts from API called in componentDidMount 
- * and changing state so tshirts will get render.
+ * @description Cart is a smart component, it has list of tshirts which are added to the cart 
+ * adding to cart will populate the state so tshirts will get render.
  * State of this Container is Tshirt List
+ * On click of the icon, whole cart panel will open which contains all the selected tshirts
+ * And the total price of the cart
+ * User can remove tshirts from the cart in there.
  */
 
 class Cart extends Component {
@@ -20,6 +23,7 @@ class Cart extends Component {
         };
     }
 
+    // handle the state when props changes
     static getDerivedStateFromProps(props, state) {
         if (props.item.hasOwnProperty('id') && props.item.id !== state.previousProps.id) {
             state.tshirtsList.push(props.item);
@@ -32,6 +36,7 @@ class Cart extends Component {
         }
     }
 
+    // to handle the remove from cart and add it back into the list
     removeItem = item => {
         this.props.removeItemFromCart(item);
         const list = this.state.tshirtsList.filter(tshirt => tshirt.id !== item.id);
@@ -42,17 +47,20 @@ class Cart extends Component {
         this.setState(stateJson);
     }
 
+    // this function will show all the tshirts in the cart
     renderTshirts = () => {
         return this.state.tshirtsList.map(tshirt => {
             return (<CartTshirt key={tshirt.id} tshirt={tshirt} onClick={this.goToTshirt} removeItem={this.removeItem}/>);
         })
     }
 
+    // function to navigate to Tshirt Details View page
     goToTshirt = details => {
         localStorage.setItem('tshirtData', JSON.stringify(details));
         this.props.history.push(`/tshirt-details`);
     }
 
+    // to handle the visiblity of the cart panel
     toggleCart = () => {
         if (this.state.tshirtsList.length) {
             this.setState({ isCartShow: !this.state.isCartShow });
@@ -70,11 +78,7 @@ class Cart extends Component {
             { this.state.isCartShow ? (
                 <div className="cart-style">
                     <span className="close" onClick={this.toggleCart}>x</span>
-                    {/* <div className="center"> */}
                         <img className="cart-icon" src="/Icons/cart.png" />
-                        {/* <span style={bubbleStyle}>{this.state.tshirtsList.length}</span>
-                        <span>Cart</span> */}
-                    {/* </div> */}
                         {this.renderTshirts()}
                     <div className="cart-footer">
                         <span style={{fontSize: '18px'}}>Sub Total</span><span style={{color: '#333'}}>(rounded off)</span>

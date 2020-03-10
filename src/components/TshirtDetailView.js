@@ -2,8 +2,9 @@ import React from 'react';
 
 /**
  * @name TshirtDetailView
- * @description this is dumb component used to show the Tshirt's data using Grid of Bootstrap.
- * @param {*} tshirtData : Contains all the details of the tshirt required to show on the page. 
+ * @description this is dumb component used to show the Tshirt's data
+ * Data is gethered from localStorage.
+ * tshirtData : Contains all the details of the tshirt required to show on the page. 
  */
 
 const TshirtDetailView = () => {

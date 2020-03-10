@@ -1,68 +1,45 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Shop-Tshirt
+This is a web application for viewing and buying Tshirts.
 
-## Available Scripts
+[Click here to see the live App](https://movies-n-chill.netlify.com/)
 
-In the project directory, you can run:
+This application is developed in Reactjs.
+Jsons are provided to fetch the data.
 
-### `yarn start`
+## Structure of the App
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The App is developed in ReactJs. It is created with the help of **React cli**. No framework is used for CSS and modeling purpose. Home page of this app is divided into 3 parts
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Header
+- Main Part
+- Footer
 
-### `yarn test`
+### Header
+It always stays on top of every page, this component is called in App component, so need to write only once in the whole app.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+It has 2 elements
+- Logo
+- Cart Icon
 
-### `yarn build`
+#### Cart
+This is a smart component which takes input from the user when user clicks on Add To Cart button.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+When user clicks Add to Cart button all the details of the tshirt will get sends to the Cart component and that tshirt gets removed from the list on the Home page. In cart user can remove the tshirt from the cart and that tshirt will get added to the list in the Home page.
+It will calculate the total amount of the cart.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Main Part
+As the name suggests it is the main body of the App. This App has 2 main parts.
 
-### `yarn eject`
+- Filter panel
+- Tshirt List panel
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Filter panel
+This panel having only Size filter for the Tshirt.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Tshirt List panel
+This is a smart comopnent, it contains the list of Tshirts. It shows all the filtered and sorted tshirts. It handles the cart operations like adding tshirt to cart and removing that from the list and when user remove the tshirt from cart it takes the tshirt back.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Footer
+It holds the link to its GitHub page and emailId of the creator.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

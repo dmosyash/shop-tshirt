@@ -3,8 +3,9 @@ import '../containers/Home.css';
 
 /**
  * @constant TshirtCell
- * @param {Object} tshirt this has all details of Tshirt
- * thumbnail of tshirt is getting from TMDb server of 185px width 
+ * @param {Object} tshirt this has a few details of Tshirt
+ * image, title and price of tshirt 
+ * It has Add To Cart button, which will call parent(Home) function addToCart
  */
 
 const TshirtCell = ({ onSelect, tshirt, addToCart }) => (
