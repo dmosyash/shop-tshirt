@@ -78,10 +78,13 @@ class Cart extends Component {
             { this.state.isCartShow ? (
                 <div className="cart-style">
                     <span className="close" onClick={this.toggleCart}>x</span>
-                        <img className="cart-icon" src="/Icons/cart.png" />
+                    <img className="cart-icon" src="/Icons/cart.png" />
+                    <div className="cart-items">
                         {this.renderTshirts()}
+                    </div>
                     <div className="cart-footer">
-                        <span style={{fontSize: '18px'}}>Sub Total</span><span style={{color: '#333'}}>(rounded off)</span>
+                        <br />
+                        <span style={{fontSize: '18px'}}>Sub Total</span><span style={{color: '#6f6f6f'}}>(rounded off)</span>
                         <span style={{ fontSize: '18px', textAlign: 'right', float: 'right' }}>$ {Math.ceil(this.getTotalAmount())}</span>
                         <div className="checkout-btn">CHECKOUT</div>
                     </div>

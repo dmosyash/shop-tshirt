@@ -28,6 +28,12 @@
     z-index: 99;
 }
 
+.cart-items {
+    height: 67vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 .close {
     cursor: pointer;
     position: absolute;
@@ -56,6 +62,7 @@
     width: 100%;
     position: absolute;
     bottom: 5%;
+    box-shadow: 0px -5px 7px -7px #dfdfdf;
 }
 
 .cart-footer span{

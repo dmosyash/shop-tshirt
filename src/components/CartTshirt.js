@@ -19,7 +19,7 @@ const headingStyle = {
 
 const detailsStyle = {
     fontSize: '12px',
-    color: '#3f3f3f'
+    color: '#6f6f6f'
 }
 
 const closeCross = {
@@ -29,7 +29,8 @@ const closeCross = {
     cursor: 'pointer',
     padding: '12px 16px',
     fontSize: '12px',
-    transform: "translate(0%, -50%)"
+    transform: "translate(0%, -50%)",
+    color: '#6f6f6f'
 }
 
 const CartTshirt = ({ tshirt, removeItem }) => (
@@ -50,7 +51,6 @@ const CartTshirt = ({ tshirt, removeItem }) => (
             <br />
             <span style={headingStyle}>$ {tshirt.price}</span>
             <br />
-        {/* <div style={buttonStyle} onClick={() => addToCart(tshirt)}>Add To Cart</div> */}
         </div>
     </div>
 );

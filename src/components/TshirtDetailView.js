@@ -15,11 +15,11 @@ const TshirtDetailView = () => {
                 
                     <h2>{tshirtData.title}</h2>
                     <h6>{tshirtData.description}</h6>
-                            <span className="sub-key">Size: {tshirtData.availableSizes}</span>
-                            <span className="sub-key">Style: {tshirtData.style}</span>
-                            <span className="sub-key">Price: {tshirtData.currencyFormat} {tshirtData.price}</span>
+                            <span className="sub-key">Size: {tshirtData.availableSizes.toString()}</span><br />
+                            <span className="sub-key">Style: {tshirtData.style}</span><br />
+                            <span className="sub-key">Price: {tshirtData.currencyFormat} {tshirtData.price}</span><br />
                     <br />
-                        <span className="key">Installments: {tshirtData.installments}</span>
+                        <span className="key">Installments: {tshirtData.installments}</span><br />
                         <span className="key">Free Shipping: {tshirtData.isFreeShipping ? 'Yes' : 'No'}</span>
             </>            
     );

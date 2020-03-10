@@ -1,5 +1,6 @@
 .wrapper {
     width: 100%;
+    max-width: 1440px;
     margin: auto;
     display: grid;
     grid-template-columns: 20% auto;
@@ -23,7 +24,7 @@
     text-align: center;
     cursor: pointer;
     display: grid;
-    grid-template-rows: 92% auto;
+    grid-template-rows: 95% auto;
 }
 
 .button-style {
@@ -50,17 +51,30 @@
 @media only screen and (max-width: 960px) {
     .list-wrapper {
         grid-template-columns: repeat(4, 25%);
+        grid-template-rows: 90% auto;
     }
 }
 
 @media only screen and (max-width: 510px) {
     .list-wrapper {
         grid-template-columns: repeat(3, 33%);
+        grid-template-rows: 85% auto;
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 400px) { 
     .list-wrapper {
         grid-template-columns: repeat(2, 50%);
+        grid-template-rows: 80% auto;
+    }
+}
+
+@media only screen and (min-width: 1450px) {
+    .wrapper {
+        width: 80%;
+        margin: auto;
+    }
+    .list-wrapper {
+        grid-template-columns: repeat(6, 18%);
     }
 }

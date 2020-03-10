@@ -1,7 +1,7 @@
 # Shop-Tshirt
 This is a web application for viewing and buying Tshirts.
 
-[Click here to see the live App](https://movies-n-chill.netlify.com/)
+[Click here to see the live App](https://shop-tshirts.netlify.com)
 
 This application is developed in Reactjs.
 Jsons are provided to fetch the data.
